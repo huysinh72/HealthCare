@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaiDang.Designer.cs">
+      <DependentUpon>BaiDang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChanDoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     <Compile Include="KhamDinhKy.Designer.cs">
       <DependentUpon>KhamDinhKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="LienHeBacSi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LienHeBacSi.Designer.cs">
+      <DependentUpon>LienHeBacSi.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +95,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiThan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NguoiThan.Designer.cs">
+      <DependentUpon>NguoiThan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaiDang.resx">
+      <DependentUpon>BaiDang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChanDoan.resx">
       <DependentUpon>ChanDoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,8 +125,14 @@
     <EmbeddedResource Include="KhamDinhKy.resx">
       <DependentUpon>KhamDinhKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LienHeBacSi.resx">
+      <DependentUpon>LienHeBacSi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiThan.resx">
+      <DependentUpon>NguoiThan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +143,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
