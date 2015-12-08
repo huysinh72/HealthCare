@@ -51,12 +51,18 @@
     <Compile Include="BaiDang.Designer.cs">
       <DependentUpon>BaiDang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BUS\BaiDangBUS.cs" />
+    <Compile Include="BUS\BenhNhanBUS.cs" />
     <Compile Include="ChanDoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ChanDoan.Designer.cs">
       <DependentUpon>ChanDoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\BacSiDAL.cs" />
+    <Compile Include="DAL\BaiDangDAL.cs" />
+    <Compile Include="DAL\BenhNhanDAL.cs" />
+    <Compile Include="DAL\DataHelper.cs" />
     <Compile Include="DangKy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,6 +75,11 @@
     <Compile Include="DangNhapDangKy.Designer.cs">
       <DependentUpon>DangNhapDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BacSi.cs" />
+    <Compile Include="DTO\BaiDang.cs" />
+    <Compile Include="DTO\BenhNhan.cs" />
+    <Compile Include="DTO\DuLieuBenhAn.cs" />
+    <Compile Include="DTO\NguoiDung.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

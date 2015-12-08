@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HealthCare.BUS;
 
 namespace HealthCare
 {
@@ -16,6 +17,7 @@ namespace HealthCare
         public event DangKy_ChangeHandle uscDangKy;
         public delegate void DangNhap_ChangeHandle();
         public event DangNhap_ChangeHandle uscDangNhap;
+        BenhNhanBUS bnBus = new BenhNhanBUS();
         public DangNhapDangKy()
         {
             InitializeComponent();
@@ -23,7 +25,12 @@ namespace HealthCare
 
         private void btDangNhap_Click(object sender, EventArgs e)
         {
-            uscDangNhap();
+            if (bnBus.hasBenhNhan(tbTenDangNhap.Text, tbMatKhau.Text))
+                uscDangNhap();
+            else
+            {
+                lbWrong.Text = "Tên đăng nhập hoặc mật khẩu sai";
+            }
         }
 
         private void btDangKy_Click(object sender, EventArgs e)

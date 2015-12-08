@@ -36,6 +36,7 @@
             this.cbGhiNho = new System.Windows.Forms.CheckBox();
             this.btDangKy = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbWrong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -118,10 +119,20 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Health Care";
             // 
+            // lbWrong
+            // 
+            this.lbWrong.AutoSize = true;
+            this.lbWrong.ForeColor = System.Drawing.Color.Red;
+            this.lbWrong.Location = new System.Drawing.Point(129, 57);
+            this.lbWrong.Name = "lbWrong";
+            this.lbWrong.Size = new System.Drawing.Size(0, 13);
+            this.lbWrong.TabIndex = 8;
+            // 
             // DangNhapDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbWrong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btDangKy);
             this.Controls.Add(this.cbGhiNho);
@@ -147,5 +158,6 @@
         private System.Windows.Forms.CheckBox cbGhiNho;
         private System.Windows.Forms.Button btDangKy;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbWrong;
     }
 }
