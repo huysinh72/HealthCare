@@ -28,66 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btChanDoan = new System.Windows.Forms.Button();
-            this.btKhamDinhKy = new System.Windows.Forms.Button();
-            this.btThongKe = new System.Windows.Forms.Button();
-            this.btBaiDang = new System.Windows.Forms.Button();
             this.lbTenNguoiDung = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btNguoiThan = new System.Windows.Forms.Button();
-            this.btLienHe = new System.Windows.Forms.Button();
             this.lbDangXuat = new System.Windows.Forms.Label();
+            this.btBaiDang = new System.Windows.Forms.Button();
+            this.btLienHe = new System.Windows.Forms.Button();
+            this.btNguoiThan = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btThongKe = new System.Windows.Forms.Button();
+            this.btKhamDinhKy = new System.Windows.Forms.Button();
+            this.btChanDoan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btChanDoan
-            // 
-            this.btChanDoan.BackColor = System.Drawing.Color.Transparent;
-            this.btChanDoan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChanDoan.Location = new System.Drawing.Point(60, 11);
-            this.btChanDoan.Name = "btChanDoan";
-            this.btChanDoan.Size = new System.Drawing.Size(94, 29);
-            this.btChanDoan.TabIndex = 0;
-            this.btChanDoan.Text = "Chẩn đoán";
-            this.btChanDoan.UseVisualStyleBackColor = false;
-            this.btChanDoan.Click += new System.EventHandler(this.btChanDoan_Click);
-            // 
-            // btKhamDinhKy
-            // 
-            this.btKhamDinhKy.BackColor = System.Drawing.Color.Transparent;
-            this.btKhamDinhKy.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btKhamDinhKy.Location = new System.Drawing.Point(185, 11);
-            this.btKhamDinhKy.Name = "btKhamDinhKy";
-            this.btKhamDinhKy.Size = new System.Drawing.Size(114, 29);
-            this.btKhamDinhKy.TabIndex = 1;
-            this.btKhamDinhKy.Text = "Khám định kỳ";
-            this.btKhamDinhKy.UseVisualStyleBackColor = false;
-            this.btKhamDinhKy.Click += new System.EventHandler(this.btKhamDinhKy_Click);
-            // 
-            // btThongKe
-            // 
-            this.btThongKe.BackColor = System.Drawing.Color.Transparent;
-            this.btThongKe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongKe.Location = new System.Drawing.Point(330, 11);
-            this.btThongKe.Name = "btThongKe";
-            this.btThongKe.Size = new System.Drawing.Size(94, 29);
-            this.btThongKe.TabIndex = 2;
-            this.btThongKe.Text = "Thống kê";
-            this.btThongKe.UseVisualStyleBackColor = false;
-            this.btThongKe.Click += new System.EventHandler(this.btThongKe_Click);
-            // 
-            // btBaiDang
-            // 
-            this.btBaiDang.BackColor = System.Drawing.Color.Transparent;
-            this.btBaiDang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBaiDang.Location = new System.Drawing.Point(455, 11);
-            this.btBaiDang.Name = "btBaiDang";
-            this.btBaiDang.Size = new System.Drawing.Size(94, 29);
-            this.btBaiDang.TabIndex = 3;
-            this.btBaiDang.Text = "Bài đăng";
-            this.btBaiDang.UseVisualStyleBackColor = false;
-            this.btBaiDang.Click += new System.EventHandler(this.btBaiDang_Click);
             // 
             // lbTenNguoiDung
             // 
@@ -110,6 +62,52 @@
             this.label1.Text = "Health Care";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lbDangXuat
+            // 
+            this.lbDangXuat.AutoSize = true;
+            this.lbDangXuat.Location = new System.Drawing.Point(811, 13);
+            this.lbDangXuat.Name = "lbDangXuat";
+            this.lbDangXuat.Size = new System.Drawing.Size(55, 13);
+            this.lbDangXuat.TabIndex = 7;
+            this.lbDangXuat.Text = "DangXuat";
+            this.lbDangXuat.Click += new System.EventHandler(this.lbDangXuat_Click);
+            // 
+            // btBaiDang
+            // 
+            this.btBaiDang.BackColor = System.Drawing.Color.Transparent;
+            this.btBaiDang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBaiDang.Location = new System.Drawing.Point(455, 11);
+            this.btBaiDang.Name = "btBaiDang";
+            this.btBaiDang.Size = new System.Drawing.Size(94, 29);
+            this.btBaiDang.TabIndex = 3;
+            this.btBaiDang.Text = "Bài đăng";
+            this.btBaiDang.UseVisualStyleBackColor = false;
+            this.btBaiDang.Click += new System.EventHandler(this.btBaiDang_Click);
+            // 
+            // btLienHe
+            // 
+            this.btLienHe.BackColor = System.Drawing.Color.Transparent;
+            this.btLienHe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLienHe.Location = new System.Drawing.Point(580, 11);
+            this.btLienHe.Name = "btLienHe";
+            this.btLienHe.Size = new System.Drawing.Size(107, 29);
+            this.btLienHe.TabIndex = 4;
+            this.btLienHe.Text = "Liên hệ bác sĩ";
+            this.btLienHe.UseVisualStyleBackColor = false;
+            this.btLienHe.Click += new System.EventHandler(this.btLienHe_Click);
+            // 
+            // btNguoiThan
+            // 
+            this.btNguoiThan.BackColor = System.Drawing.Color.Transparent;
+            this.btNguoiThan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNguoiThan.Location = new System.Drawing.Point(716, 11);
+            this.btNguoiThan.Name = "btNguoiThan";
+            this.btNguoiThan.Size = new System.Drawing.Size(110, 29);
+            this.btNguoiThan.TabIndex = 5;
+            this.btNguoiThan.Text = "Người Thân";
+            this.btNguoiThan.UseVisualStyleBackColor = false;
+            this.btNguoiThan.Click += new System.EventHandler(this.btNguoiThan_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -124,40 +122,43 @@
             this.groupBox1.Size = new System.Drawing.Size(900, 50);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btNguoiThan
+            // btThongKe
             // 
-            this.btNguoiThan.BackColor = System.Drawing.Color.Transparent;
-            this.btNguoiThan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNguoiThan.Location = new System.Drawing.Point(716, 11);
-            this.btNguoiThan.Name = "btNguoiThan";
-            this.btNguoiThan.Size = new System.Drawing.Size(110, 29);
-            this.btNguoiThan.TabIndex = 5;
-            this.btNguoiThan.Text = "Người Thân";
-            this.btNguoiThan.UseVisualStyleBackColor = false;
-            this.btNguoiThan.Click += new System.EventHandler(this.btNguoiThan_Click);
+            this.btThongKe.BackColor = System.Drawing.Color.Transparent;
+            this.btThongKe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThongKe.Location = new System.Drawing.Point(330, 11);
+            this.btThongKe.Name = "btThongKe";
+            this.btThongKe.Size = new System.Drawing.Size(94, 29);
+            this.btThongKe.TabIndex = 2;
+            this.btThongKe.Text = "Thống kê";
+            this.btThongKe.UseVisualStyleBackColor = false;
+            this.btThongKe.Click += new System.EventHandler(this.btThongKe_Click);
             // 
-            // btLienHe
+            // btKhamDinhKy
             // 
-            this.btLienHe.BackColor = System.Drawing.Color.Transparent;
-            this.btLienHe.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLienHe.Location = new System.Drawing.Point(580, 11);
-            this.btLienHe.Name = "btLienHe";
-            this.btLienHe.Size = new System.Drawing.Size(107, 29);
-            this.btLienHe.TabIndex = 4;
-            this.btLienHe.Text = "Liên hệ bác sĩ";
-            this.btLienHe.UseVisualStyleBackColor = false;
-            this.btLienHe.Click += new System.EventHandler(this.btLienHe_Click);
+            this.btKhamDinhKy.BackColor = System.Drawing.Color.Transparent;
+            this.btKhamDinhKy.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btKhamDinhKy.Location = new System.Drawing.Point(185, 11);
+            this.btKhamDinhKy.Name = "btKhamDinhKy";
+            this.btKhamDinhKy.Size = new System.Drawing.Size(114, 29);
+            this.btKhamDinhKy.TabIndex = 1;
+            this.btKhamDinhKy.Text = "Khám định kỳ";
+            this.btKhamDinhKy.UseVisualStyleBackColor = false;
+            this.btKhamDinhKy.Click += new System.EventHandler(this.btKhamDinhKy_Click);
             // 
-            // lbDangXuat
+            // btChanDoan
             // 
-            this.lbDangXuat.AutoSize = true;
-            this.lbDangXuat.Location = new System.Drawing.Point(811, 13);
-            this.lbDangXuat.Name = "lbDangXuat";
-            this.lbDangXuat.Size = new System.Drawing.Size(55, 13);
-            this.lbDangXuat.TabIndex = 7;
-            this.lbDangXuat.Text = "DangXuat";
-            this.lbDangXuat.Click += new System.EventHandler(this.lbDangXuat_Click);
+            this.btChanDoan.BackColor = System.Drawing.Color.Transparent;
+            this.btChanDoan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChanDoan.Location = new System.Drawing.Point(60, 11);
+            this.btChanDoan.Name = "btChanDoan";
+            this.btChanDoan.Size = new System.Drawing.Size(94, 29);
+            this.btChanDoan.TabIndex = 0;
+            this.btChanDoan.Text = "Chẩn đoán";
+            this.btChanDoan.UseVisualStyleBackColor = false;
+            this.btChanDoan.Click += new System.EventHandler(this.btChanDoan_Click);
             // 
             // MainMenu
             // 
@@ -177,15 +178,15 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lbTenNguoiDung;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDangXuat;
+        private System.Windows.Forms.Button btBaiDang;
+        private System.Windows.Forms.Button btLienHe;
+        private System.Windows.Forms.Button btNguoiThan;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btChanDoan;
         private System.Windows.Forms.Button btKhamDinhKy;
         private System.Windows.Forms.Button btThongKe;
-        private System.Windows.Forms.Button btBaiDang;
-        private System.Windows.Forms.Label lbTenNguoiDung;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btNguoiThan;
-        private System.Windows.Forms.Button btLienHe;
-        private System.Windows.Forms.Label lbDangXuat;
     }
 }

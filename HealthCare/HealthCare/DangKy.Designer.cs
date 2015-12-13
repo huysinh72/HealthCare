@@ -40,27 +40,30 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cbDongYDieuKhoan = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbHoTen = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
+            this.tbXacNhanMatkhau = new System.Windows.Forms.TextBox();
+            this.tbMatKhau = new System.Windows.Forms.TextBox();
+            this.tbTenDangNhap = new System.Windows.Forms.TextBox();
+            this.tbDienThoai = new System.Windows.Forms.TextBox();
             this.cbNam = new System.Windows.Forms.CheckBox();
             this.cbNu = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpickerNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.lbWrong = new System.Windows.Forms.Label();
+            this.btCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btDangKy
             // 
             this.btDangKy.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangKy.Location = new System.Drawing.Point(237, 358);
+            this.btDangKy.Location = new System.Drawing.Point(333, 361);
             this.btDangKy.Name = "btDangKy";
             this.btDangKy.Size = new System.Drawing.Size(75, 23);
             this.btDangKy.TabIndex = 0;
             this.btDangKy.Text = "Đăng ký";
             this.btDangKy.UseVisualStyleBackColor = true;
+            this.btDangKy.Click += new System.EventHandler(this.btDangKy_Click);
             // 
             // label1
             // 
@@ -173,66 +176,71 @@
             this.cbDongYDieuKhoan.TabIndex = 11;
             this.cbDongYDieuKhoan.Text = "Tôi đồng ý các điều khoản của hệ thống";
             this.cbDongYDieuKhoan.UseVisualStyleBackColor = true;
+            this.cbDongYDieuKhoan.CheckedChanged += new System.EventHandler(this.cbDongYDieuKhoan_CheckedChanged);
             // 
-            // textBox1
+            // tbHoTen
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(237, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 22);
-            this.textBox1.TabIndex = 12;
+            this.tbHoTen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHoTen.Location = new System.Drawing.Point(237, 58);
+            this.tbHoTen.Name = "tbHoTen";
+            this.tbHoTen.Size = new System.Drawing.Size(171, 22);
+            this.tbHoTen.TabIndex = 12;
             // 
-            // textBox3
+            // tbEmail
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(237, 266);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 22);
-            this.textBox3.TabIndex = 14;
+            this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(237, 266);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(171, 22);
+            this.tbEmail.TabIndex = 14;
             // 
-            // textBox4
+            // tbDiaChi
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(237, 295);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(171, 22);
-            this.textBox4.TabIndex = 15;
+            this.tbDiaChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiaChi.Location = new System.Drawing.Point(237, 295);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(171, 22);
+            this.tbDiaChi.TabIndex = 15;
             // 
-            // textBox5
+            // tbXacNhanMatkhau
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(237, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(171, 22);
-            this.textBox5.TabIndex = 16;
+            this.tbXacNhanMatkhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbXacNhanMatkhau.Location = new System.Drawing.Point(237, 148);
+            this.tbXacNhanMatkhau.Name = "tbXacNhanMatkhau";
+            this.tbXacNhanMatkhau.Size = new System.Drawing.Size(171, 22);
+            this.tbXacNhanMatkhau.TabIndex = 16;
+            this.tbXacNhanMatkhau.UseSystemPasswordChar = true;
             // 
-            // textBox6
+            // tbMatKhau
             // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(237, 118);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(171, 22);
-            this.textBox6.TabIndex = 17;
+            this.tbMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMatKhau.Location = new System.Drawing.Point(237, 118);
+            this.tbMatKhau.Name = "tbMatKhau";
+            this.tbMatKhau.Size = new System.Drawing.Size(171, 22);
+            this.tbMatKhau.TabIndex = 17;
+            this.tbMatKhau.UseSystemPasswordChar = true;
             // 
-            // textBox7
+            // tbTenDangNhap
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(237, 88);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(171, 22);
-            this.textBox7.TabIndex = 18;
+            this.tbTenDangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenDangNhap.Location = new System.Drawing.Point(237, 88);
+            this.tbTenDangNhap.Name = "tbTenDangNhap";
+            this.tbTenDangNhap.Size = new System.Drawing.Size(171, 22);
+            this.tbTenDangNhap.TabIndex = 18;
             // 
-            // textBox2
+            // tbDienThoai
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(237, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 22);
-            this.textBox2.TabIndex = 19;
+            this.tbDienThoai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDienThoai.Location = new System.Drawing.Point(237, 236);
+            this.tbDienThoai.Name = "tbDienThoai";
+            this.tbDienThoai.Size = new System.Drawing.Size(171, 22);
+            this.tbDienThoai.TabIndex = 19;
             // 
             // cbNam
             // 
             this.cbNam.AutoSize = true;
+            this.cbNam.Checked = true;
+            this.cbNam.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbNam.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNam.Location = new System.Drawing.Point(237, 178);
             this.cbNam.Name = "cbNam";
@@ -240,6 +248,7 @@
             this.cbNam.TabIndex = 20;
             this.cbNam.Text = "Nam";
             this.cbNam.UseVisualStyleBackColor = true;
+            this.cbNam.CheckedChanged += new System.EventHandler(this.cbNam_CheckedChanged);
             // 
             // cbNu
             // 
@@ -251,29 +260,52 @@
             this.cbNu.TabIndex = 21;
             this.cbNu.Text = "Nữ";
             this.cbNu.UseVisualStyleBackColor = true;
+            this.cbNu.CheckedChanged += new System.EventHandler(this.cbNu_CheckedChanged);
             // 
-            // dateTimePicker1
+            // dtpickerNgaySinh
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(237, 205);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(171, 22);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpickerNgaySinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpickerNgaySinh.Location = new System.Drawing.Point(237, 205);
+            this.dtpickerNgaySinh.Name = "dtpickerNgaySinh";
+            this.dtpickerNgaySinh.Size = new System.Drawing.Size(171, 22);
+            this.dtpickerNgaySinh.TabIndex = 22;
+            // 
+            // lbWrong
+            // 
+            this.lbWrong.AutoSize = true;
+            this.lbWrong.ForeColor = System.Drawing.Color.Red;
+            this.lbWrong.Location = new System.Drawing.Point(237, 347);
+            this.lbWrong.Name = "lbWrong";
+            this.lbWrong.Size = new System.Drawing.Size(0, 13);
+            this.lbWrong.TabIndex = 23;
+            // 
+            // btCancel
+            // 
+            this.btCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.Location = new System.Drawing.Point(237, 361);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 24;
+            this.btCancel.Text = "Hủy";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.lbWrong);
+            this.Controls.Add(this.dtpickerNgaySinh);
             this.Controls.Add(this.cbNu);
             this.Controls.Add(this.cbNam);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDienThoai);
+            this.Controls.Add(this.tbTenDangNhap);
+            this.Controls.Add(this.tbMatKhau);
+            this.Controls.Add(this.tbXacNhanMatkhau);
+            this.Controls.Add(this.tbDiaChi);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.tbHoTen);
             this.Controls.Add(this.cbDongYDieuKhoan);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -287,7 +319,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btDangKy);
             this.Name = "DangKy";
-            this.Size = new System.Drawing.Size(536, 389);
+            this.Size = new System.Drawing.Size(547, 398);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,15 +339,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox cbDongYDieuKhoan;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbHoTen;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbDiaChi;
+        private System.Windows.Forms.TextBox tbXacNhanMatkhau;
+        private System.Windows.Forms.TextBox tbMatKhau;
+        private System.Windows.Forms.TextBox tbTenDangNhap;
+        private System.Windows.Forms.TextBox tbDienThoai;
         private System.Windows.Forms.CheckBox cbNam;
         private System.Windows.Forms.CheckBox cbNu;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpickerNgaySinh;
+        private System.Windows.Forms.Label lbWrong;
+        private System.Windows.Forms.Button btCancel;
     }
 }

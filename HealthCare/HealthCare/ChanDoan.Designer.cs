@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbBenh = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,9 +49,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 26);
+            this.label1.Size = new System.Drawing.Size(123, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chuẩn đoán";
+            this.label1.Text = "Chẩn đoán";
             // 
             // cbVungDau
             // 
@@ -69,6 +71,7 @@
             this.cbVungDau.Name = "cbVungDau";
             this.cbVungDau.Size = new System.Drawing.Size(121, 29);
             this.cbVungDau.TabIndex = 1;
+            this.cbVungDau.SelectedIndexChanged += new System.EventHandler(this.cbVungDau_SelectedIndexChanged);
             // 
             // lbDsTrieuChung
             // 
@@ -99,17 +102,19 @@
             this.cbTrieuChungTheoVung.Name = "cbTrieuChungTheoVung";
             this.cbTrieuChungTheoVung.Size = new System.Drawing.Size(164, 29);
             this.cbTrieuChungTheoVung.TabIndex = 4;
+            this.cbTrieuChungTheoVung.SelectedIndexChanged += new System.EventHandler(this.cbTrieuChungTheoVung_SelectedIndexChanged);
             // 
             // lbBenhChanDoan
             // 
             this.lbBenhChanDoan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBenhChanDoan.FormattingEnabled = true;
             this.lbBenhChanDoan.ItemHeight = 21;
-            this.lbBenhChanDoan.Location = new System.Drawing.Point(634, 85);
+            this.lbBenhChanDoan.Location = new System.Drawing.Point(674, 85);
             this.lbBenhChanDoan.Name = "lbBenhChanDoan";
             this.lbBenhChanDoan.ScrollAlwaysVisible = true;
             this.lbBenhChanDoan.Size = new System.Drawing.Size(187, 88);
             this.lbBenhChanDoan.TabIndex = 5;
+            this.lbBenhChanDoan.SelectedIndexChanged += new System.EventHandler(this.lbBenhChanDoan_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -135,7 +140,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(630, 60);
+            this.label5.Location = new System.Drawing.Point(670, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 21);
             this.label5.TabIndex = 8;
@@ -161,12 +166,34 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nội dụng bệnh";
             // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(204, 120);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 11;
+            this.btAdd.Text = "Them";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Location = new System.Drawing.Point(292, 120);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 12;
+            this.btDel.Text = "Xoa";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
             // ChanDoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.btDel);
+            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbBenh);
             this.Controls.Add(this.label5);
@@ -180,6 +207,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ChanDoan";
             this.Size = new System.Drawing.Size(900, 400);
+            this.Load += new System.EventHandler(this.ChanDoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +226,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbBenh;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btDel;
     }
 }

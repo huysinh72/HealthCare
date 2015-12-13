@@ -15,9 +15,8 @@ namespace HealthCare
     {
         public delegate void DangKy_ChangeHandle();
         public event DangKy_ChangeHandle uscDangKy;
-        public delegate void DangNhap_ChangeHandle();
-        public event DangNhap_ChangeHandle uscDangNhap;
-        BenhNhanBUS bnBus = new BenhNhanBUS();
+        public delegate void Main_ChangeHandle();
+        public event Main_ChangeHandle uscMain;
         public DangNhapDangKy()
         {
             InitializeComponent();
@@ -25,12 +24,16 @@ namespace HealthCare
 
         private void btDangNhap_Click(object sender, EventArgs e)
         {
-            if (bnBus.hasBenhNhan(tbTenDangNhap.Text, tbMatKhau.Text))
-                uscDangNhap();
+            BenhNhanBUS bus = new BenhNhanBUS();
+            if (bus.hasTaiKhoan(tbTenDangNhap.Text, tbMatKhau.Text))
+            {
+                uscMain();
+            }
             else
             {
-                lbWrong.Text = "Tên đăng nhập hoặc mật khẩu sai";
+                lbWrong.Text = "Tài khoản hoặc mật khẩu sai";
             }
+           
         }
 
         private void btDangKy_Click(object sender, EventArgs e)

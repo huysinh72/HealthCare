@@ -10,138 +10,88 @@ using System.Windows.Forms;
 
 namespace HealthCare
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            mainMenu.Hide();
-            dangKy.Hide();
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            baiDang.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
+           // mainMenu.Hide();
+            tabDangKy.Appearance = TabAppearance.FlatButtons;
+            tabDangKy.ItemSize = new Size(0, 1);
+            tabDangKy.SizeMode = TabSizeMode.Fixed;
+            tabDangKy.SelectedIndex = 6;
+           
         }
 
-        
-        private void ClickDangKy()
+        private void change2ChanDoan()
         {
-            dangNhapDangKy.Hide();
-            dangKy.Show();
-
+            tabDangKy.SelectedIndex = 0;
         }
-
-        private void ClickDangNhap()
+        private void change2KhamDinhKy()
         {
-            dangNhapDangKy.Hide();
+            tabDangKy.SelectedIndex = 1;
+        }
+        private void change2ThongKe()
+        {
+            tabDangKy.SelectedIndex = 2;
+        }
+        private void change2BaiDang()
+        {
+            tabDangKy.SelectedIndex = 3;
+        }
+        private void change2LienHeBacSi()
+        {
+            tabDangKy.SelectedIndex = 4;
+        }
+        private void change2NguoiThan()
+        {
+            tabDangKy.SelectedIndex = 5;
+        }
+        private void changeMain()
+        {
+            tabDangKy.SelectedIndex = 0;
             mainMenu.Show();
-
         }
-
-        private void ClickChanDoan()
+        private void change2DangKy()
         {
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            baiDang.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            chanDoan.Show();
+            tabDangKy.SelectedIndex = 7;
         }
-        private void ClickKhamDinhKy()
+        private void change2DangNhap()
         {
-            chanDoan.Hide();
-            thongKe.Hide();
-            baiDang.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            khamDinhKy.Show();
+            tabDangKy.SelectedIndex = 6;
         }
-        private void ClickTrangChu()
+        private void change2DangXuat()
         {
-            thongKe.Hide();
-            chanDoan.Hide();
-            baiDang.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            khamDinhKy.Hide();
-        }
-
-        private void ClickThongKe()
-        {
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            baiDang.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            thongKe.Show();
-        }
-
-        private void ClickBaiDang()
-        {
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            baiDang.Show();
-        }
-
-        private void ClickLienHeBacSi()
-        {
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            lienHeBacSi.Show();
-            nguoiThan.Hide();
-            baiDang.Hide();
-        }
-
-        private void ClickNguoiThan()
-        {
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Show();
-            baiDang.Hide();
-        }
-
-        private void ClickDangXuat()
-        {
-            chanDoan.Hide();
-            khamDinhKy.Hide();
-            thongKe.Hide();
-            lienHeBacSi.Hide();
-            nguoiThan.Hide();
-            baiDang.Hide();
+            tabDangKy.SelectedIndex = 6;
             mainMenu.Hide();
-            dangNhapDangKy.Show();
         }
 
         private void dangNhapDangKy_Load(object sender, EventArgs e)
         {
-            dangNhapDangKy.uscDangKy += new DangNhapDangKy.DangKy_ChangeHandle(ClickDangKy);
-            dangNhapDangKy.uscDangNhap += new DangNhapDangKy.DangNhap_ChangeHandle(ClickDangNhap);
-            
+            mainMenu.Hide();
+            dangNhapDangKy.uscMain += new DangNhapDangKy.Main_ChangeHandle(changeMain);
+            dangNhapDangKy.uscDangKy += new DangNhapDangKy.DangKy_ChangeHandle(change2DangKy);
         }
 
         private void mainMenu_Load(object sender, EventArgs e)
         {
-            mainMenu.uscChanDoan += new MainMenu.ChanDoan_ChangeHandle(ClickChanDoan);
-            mainMenu.uscKhamDinhKy += new MainMenu.KhamDinhKy_ChangeHandle(ClickKhamDinhKy);
-            mainMenu.uscTrangChu += new MainMenu.TrangChu_ChangeHandle(ClickTrangChu);
-            mainMenu.uscThongKe += new MainMenu.ThongKe_ChangeHandle(ClickThongKe);
-            mainMenu.uscBaiDang += new MainMenu.BaiDang_ChangeHandle(ClickBaiDang);
-            mainMenu.uscBacSi += new MainMenu.BacSi_ChangeHandle(ClickLienHeBacSi);
-            mainMenu.uscNguoiThan += new MainMenu.NguoiThan_ChangeHandle(ClickNguoiThan);
-            mainMenu.uscDangXuat += new MainMenu.DangXuat_ChangeHandle(ClickDangXuat);
+            mainMenu.uscChanDoan += new MainMenu.ChanDoan_ChangeHandle(change2ChanDoan);
+            mainMenu.uscBacSi += new MainMenu.BacSi_ChangeHandle(change2LienHeBacSi);
+            mainMenu.uscBaiDang += new MainMenu.BaiDang_ChangeHandle(change2BaiDang);
+            mainMenu.uscKhamDinhKy += new MainMenu.KhamDinhKy_ChangeHandle(change2KhamDinhKy);
+            mainMenu.uscNguoiThan += new MainMenu.NguoiThan_ChangeHandle(change2NguoiThan);
+            mainMenu.uscThongKe += new MainMenu.ThongKe_ChangeHandle(change2ThongKe);
+            mainMenu.uscDangXuat += new MainMenu.DangXuat_ChangeHandle(change2DangXuat);
         }
-       
+
+        private void dangKy1_Load(object sender, EventArgs e)
+        {
+            dangKy.uscDangKyToDangNhap += new DangKy.DangKyToDangNhap_ChangeHandle(change2DangNhap);
+        } 
     }
 }

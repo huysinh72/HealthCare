@@ -10,9 +10,21 @@ namespace HealthCare.BUS
     public class BenhNhanBUS
     {
         BenhNhanDAL dal = new BenhNhanDAL();
-        public bool hasBenhNhan(string tenDangNhap, string MatKhau)
+        public bool hasTaiKhoan(string tenDangNhap, string MatKhau)
         {
-            return dal.hasBenhNhan(tenDangNhap, MatKhau);
+            return dal.hasTaiKhoan(tenDangNhap, MatKhau);
         }
+
+        public bool ktTrungTaiKhoan(string tenDangNhap)
+        {
+            return dal.ktTrungTaiKhoan(tenDangNhap);
+        }
+
+        public bool addBenhNhan(BenhNhan bn)
+        {
+           return dal.addBenhNhan(bn);           
+        }
+
+
     }
 }

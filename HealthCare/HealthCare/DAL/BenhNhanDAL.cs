@@ -48,7 +48,7 @@ namespace HealthCare.DAL
             return listBenhNhan;
         }
 
-        public bool hasBenhNhan(string tenDangNhap, string MatKhau)
+        public bool hasTaiKhoan(string tenDangNhap, string MatKhau)
         {
 
             DataTable table = null;
@@ -59,12 +59,30 @@ namespace HealthCare.DAL
             return true;
         }
 
-        public bool addBenhNhan(BenhNhan product)
+        public bool ktTrungTaiKhoan(string tenDangNhap)
         {
-            string query = "aa";
+
+            DataTable table = null;
+            table = helper.executeQuery(String.Format("Select * from NguoiDung where [TenDangNhap] = '{0}'", tenDangNhap));
+
+            if (table.Rows.Count == 0)
+                return false;
+            return true;
+        }
+
+        public bool addBenhNhan(BenhNhan bn)
+        {
+            NguoiDung nd = new NguoiDung();
+            nd.TenDangNhap = bn.TenDangNhap;
+            nd.MatKhau = bn.MatKhau;
+            nd.GioiTinh = bn.GioiTinh;
+            nd.TenNguoiDung = bn.TenNguoiDung;
+            nd.NgaySinh = bn.NgaySinh;
+            nd.Email = bn.Email;
+            nd.DienThoai = bn.DienThoai;
             try
             {
-                helper.executeNonQuery(query);
+                helper.executeNonQueryAddNguoiDung(nd);
                 return true;
             }
             catch (Exception ex)
