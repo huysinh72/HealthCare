@@ -26,7 +26,7 @@ namespace HealthCare.DAL
         {
             TrieuChungChanDoan[] listTrieuChung = null;
             DataTable table = null;
-            string command = "select * from ViTriChanDoan VT LEFT JOIN ViTriTrieuChung VTTC ON VT.MaViTri =VTTC.MaViTri LEFT JOIN TrieuChungChanDoan TC ON TC.MaTrieuChung=VTTC.MaTrieuChung WHERE VT.TenViTri=N'" + ViTri+"'";
+            string command = "select * from ViTriBenh VT LEFT JOIN TrieuChung_ViTri VTTC ON VT.MaViTri =VTTC.MaViTri LEFT JOIN TrieuChung TC ON TC.MaTrieuChung=VTTC.MaTrieuChung WHERE VT.TenViTri=N'" + ViTri+"'";
             table = helper.executeQuery(command);
 
             if (table.Rows.Count == 0)

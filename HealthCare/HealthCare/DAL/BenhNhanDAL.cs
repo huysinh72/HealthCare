@@ -23,9 +23,8 @@ namespace HealthCare.DAL
             bn.Email = row["Email"].ToString().Trim();
             bn.DienThoai = row["DienThoai"].ToString().Trim();
             bn.NhanBaiDang = int.Parse(row["NhanBaiDang"].ToString());
-            bn.LoaiNguoiDung = int.Parse(row["LoaiNguoiDung"].ToString());
-            NguoiDung nd = new NguoiDung();
-            
+            bn.DiaChi = row["LoaiNguoiDung"].ToString();
+             
             return bn;
         }
 
@@ -33,7 +32,7 @@ namespace HealthCare.DAL
         {
             BenhNhan[] listBenhNhan = null;
             DataTable table = null;
-            table = helper.executeQuery("Select * from NguoiDung");
+            table = helper.executeQuery("Select * from BenhNhan");
 
             if (table.Rows.Count == 0)
                 return null;
@@ -52,7 +51,7 @@ namespace HealthCare.DAL
         {
 
             DataTable table = null;
-            table = helper.executeQuery(String.Format("Select * from NguoiDung where [TenDangNhap] = '{0}' and [MatKhau] = '{1}'", tenDangNhap, MatKhau));
+            table = helper.executeQuery(String.Format("Select * from BenhNhan where [TenDangNhap] = '{0}' and [MatKhau] = '{1}'", tenDangNhap, MatKhau));
 
             if (table.Rows.Count == 0)
                 return false;
@@ -63,7 +62,7 @@ namespace HealthCare.DAL
         {
 
             DataTable table = null;
-            table = helper.executeQuery(String.Format("Select * from NguoiDung where [TenDangNhap] = '{0}'", tenDangNhap));
+            table = helper.executeQuery(String.Format("Select * from BenhNhan where [TenDangNhap] = '{0}'", tenDangNhap));
 
             if (table.Rows.Count == 0)
                 return false;
@@ -72,17 +71,9 @@ namespace HealthCare.DAL
 
         public bool addBenhNhan(BenhNhan bn)
         {
-            NguoiDung nd = new NguoiDung();
-            nd.TenDangNhap = bn.TenDangNhap;
-            nd.MatKhau = bn.MatKhau;
-            nd.GioiTinh = bn.GioiTinh;
-            nd.TenNguoiDung = bn.TenNguoiDung;
-            nd.NgaySinh = bn.NgaySinh;
-            nd.Email = bn.Email;
-            nd.DienThoai = bn.DienThoai;
             try
             {
-                helper.executeNonQueryAddNguoiDung(nd);
+                helper.executeNonQueryAddBenhNhan(bn);
                 return true;
             }
             catch (Exception ex)

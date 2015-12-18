@@ -23,7 +23,7 @@ namespace HealthCare.DAL
         {
             ViTriChanDoan[] listViTri = null;
             DataTable table = null;
-            table = helper.executeQuery("Select * from ViTriChanDoan");
+            table = helper.executeQuery("Select * from ViTriBenh");
 
             if (table.Rows.Count == 0)
                 return null;

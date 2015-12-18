@@ -86,7 +86,6 @@
     <Compile Include="DTO\Benh.cs" />
     <Compile Include="DTO\BenhNhan.cs" />
     <Compile Include="DTO\DuLieuBenhAn.cs" />
-    <Compile Include="DTO\NguoiDung.cs" />
     <Compile Include="DTO\TrieuChungChanDoan.cs" />
     <Compile Include="DTO\ViTriChanDoan.cs" />
     <Compile Include="DTO\ViTriTrieuChung.cs" />

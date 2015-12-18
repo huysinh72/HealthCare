@@ -59,19 +59,20 @@ namespace HealthCare.DAL
             }
         }
 
-        public void executeNonQueryAddNguoiDung(NguoiDung nd)
+        public void executeNonQueryAddBenhNhan(BenhNhan bn)
         {
             SqlCommand comm = new SqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.StoredProcedure;
-            comm.Parameters.AddWithValue("@tenDN", nd.TenDangNhap);
-            comm.Parameters.AddWithValue("@mk", nd.MatKhau);
-            comm.Parameters.AddWithValue("@ten", nd.TenNguoiDung);
-            comm.Parameters.AddWithValue("@ns", nd.NgaySinh);
-            comm.Parameters.AddWithValue("@gt", nd.GioiTinh);
-            comm.Parameters.AddWithValue("@email", nd.Email);
-            comm.Parameters.AddWithValue("@dt", nd.DienThoai);
-            comm.CommandText = "sp_form_ThemNguoiDung";
+            comm.Parameters.AddWithValue("@tenDN", bn.TenDangNhap);
+            comm.Parameters.AddWithValue("@mk", bn.MatKhau);
+            comm.Parameters.AddWithValue("@ten", bn.TenNguoiDung);
+            comm.Parameters.AddWithValue("@ns", bn.NgaySinh);
+            comm.Parameters.AddWithValue("@gt", bn.GioiTinh);
+            comm.Parameters.AddWithValue("@email", bn.Email);
+            comm.Parameters.AddWithValue("@dt", bn.DienThoai);
+            comm.Parameters.AddWithValue("@diaChi", bn.DiaChi);
+            comm.CommandText = "sp_form_ThemBenhNhan";
             try
             {
                 conn.Open();

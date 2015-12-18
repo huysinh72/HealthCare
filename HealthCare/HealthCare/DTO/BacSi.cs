@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthCare.DTO
 {
-    public class BacSi:NguoiDung
+    public class BacSi
     {
         string ChuyenNganh { get; set; }
 

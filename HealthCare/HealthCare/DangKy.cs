@@ -61,6 +61,7 @@ namespace HealthCare
            bn.Email = tbEmail.Text;
            bn.DienThoai = tbDienThoai.Text;
            bn.GioiTinh = cbNam.Checked ? "Nam" : "Nữ";
+           bn.DiaChi = tbDiaChi.Text;
            bus.addBenhNhan(bn);
            if (MessageBox.Show("Bạn đã đăng ký thành công!", "Đăng ký", MessageBoxButtons.OK)==DialogResult.OK)
            {
