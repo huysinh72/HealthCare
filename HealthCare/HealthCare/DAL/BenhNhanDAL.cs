@@ -81,5 +81,12 @@ namespace HealthCare.DAL
                 throw ex;
             }
         }
+
+        public DataTable getDuLieuKham(string tenDangNhap)
+        {
+            string query = String.Format("select top 50 dlk.* from DuLieuKham dlk join ChiTietKham ctk on dlk.MaDuLieuKham = ctk.DuLieuKham where ctk.BenhNhan = '{0}'", tenDangNhap);
+            DataTable res = helper.executeQuery(query);
+            return res;
+        }
     }
 }
