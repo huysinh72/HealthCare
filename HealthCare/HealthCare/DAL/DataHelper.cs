@@ -91,6 +91,63 @@ namespace HealthCare.DAL
                 if (comm != null)
                     comm.Dispose();
             }
-        } 
+        }
+
+        public DataTable executeQueryFindNguoiThan(string ten, string bn)
+        {
+            DataTable table = new DataTable();
+            SqlCommand comm = new SqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@name", ten);
+            comm.Parameters.AddWithValue("@tenDN", bn);
+            comm.CommandText = "sp_form_TimNguoiThan";
+            try
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                da.Fill(table);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Execute query eror:" + e.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Close();
+                if (comm != null)
+                    comm.Dispose();
+            }
+            return table;
+        }
+
+        public void executeNonQueryAddNguoiThan(string bn, string nt)
+        {
+            SqlCommand comm = new SqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@benhNhan", bn);
+            comm.Parameters.AddWithValue("@nguoiThan", nt);
+            comm.CommandText = "sp_form_ThemNguoiThan";
+            try
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Execute non query eror:" + e.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Close();
+                if (comm != null)
+                    comm.Dispose();
+            }
+        }
     }
 }

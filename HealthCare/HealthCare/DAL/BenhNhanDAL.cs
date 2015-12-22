@@ -16,15 +16,14 @@ namespace HealthCare.DAL
         {
             BenhNhan bn = new BenhNhan();
             bn.TenDangNhap = row["TenDangNhap"].ToString().Trim();
-            bn.MatKhau = row["TenSP"].ToString().Trim();
-            bn.TenNguoiDung = row["TenNguoiDung"].ToString().Trim();
-            bn.NgaySinh = DateTime.Parse(row["NgaySinh"].ToString());
+            bn.MatKhau = row["MatKhau"].ToString().Trim();
+            bn.TenNguoiDung = row["TenBenhNhan"].ToString().Trim();
+            bn.NgaySinh = DateTime.Parse(row["NgaySinh"].ToString()).ToShortDateString();
             bn.GioiTinh = row["GioiTinh"].ToString().Trim();
             bn.Email = row["Email"].ToString().Trim();
             bn.DienThoai = row["DienThoai"].ToString().Trim();
-            bn.NhanBaiDang = int.Parse(row["NhanBaiDang"].ToString());
-            bn.DiaChi = row["LoaiNguoiDung"].ToString();
-             
+            bn.DiaChi = row["DiaChi"].ToString().Trim();
+            bn.NhanBaiDang = int.Parse(row["NhanBaiDang"].ToString());          
             return bn;
         }
 
@@ -69,6 +68,16 @@ namespace HealthCare.DAL
             return true;
         }
 
+        public BenhNhan GetThongTinTaiKhoan(string tenDangNhap)
+        {
+            DataTable table = null;
+            table = helper.executeQuery(String.Format("Select * from BenhNhan where [TenDangNhap] = '{0}'", tenDangNhap));
+
+            if (table.Rows.Count != 0)
+                return GetBenhNhanFromDataRow(table.Rows[0]);
+            return null;
+        }
+
         public bool addBenhNhan(BenhNhan bn)
         {
             try
@@ -80,6 +89,13 @@ namespace HealthCare.DAL
             {
                 throw ex;
             }
+        }
+
+        public DataTable getDuLieuKham(string tenDangNhap)
+        {
+            string query = String.Format("select top 50 dlk.* from DuLieuKham dlk join ChiTietKham ctk on dlk.MaDuLieuKham = ctk.DuLieuKham where ctk.BenhNhan = '{0}'", tenDangNhap);
+            DataTable res = helper.executeQuery(query);
+            return res;
         }
     }
 }

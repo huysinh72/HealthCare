@@ -18,11 +18,16 @@ namespace HealthCare
         {
             InitializeComponent();
 
-            //ViTriChanDoanBUS vt = new ViTriChanDoanBUS();
-            //TrieuChungChanDoanBUS tc = new TrieuChungChanDoanBUS();
-            ////listViTri
-            //cbVungDau.DataSource = vt.getListStringViTri();
-            ////ListTrieChung
+            
+        }
+
+        public void init()
+        {
+            ViTriChanDoanBUS vt = new ViTriChanDoanBUS();
+            TrieuChungChanDoanBUS tc = new TrieuChungChanDoanBUS();
+            //listViTri
+            cbVungDau.DataSource = vt.getListStringViTri();
+            //ListTrieChung
             //string ViTri = cbVungDau.Text;
             //cbTrieuChungTheoVung.DataSource = tc.getListStringTrieuChung(ViTri);
         }

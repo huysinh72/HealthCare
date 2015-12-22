@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HealthCare.DTO;
+using HealthCare.BUS;
 
 namespace HealthCare
 {
     public partial class MainForm : Form
     {
+
+        static public string tenDangNhap = string.Empty;
         public MainForm()
         {
             InitializeComponent();
@@ -25,12 +29,14 @@ namespace HealthCare
             tabDangKy.ItemSize = new Size(0, 1);
             tabDangKy.SizeMode = TabSizeMode.Fixed;
             tabDangKy.SelectedIndex = 6;
+            ChanDoan.init();
            
         }
 
         private void change2ChanDoan()
         {
             tabDangKy.SelectedIndex = 0;
+            ChanDoan.init();
         }
         private void change2KhamDinhKy()
         {
@@ -39,23 +45,31 @@ namespace HealthCare
         private void change2ThongKe()
         {
             tabDangKy.SelectedIndex = 2;
+            thongKe.init();
         }
         private void change2BaiDang()
         {
             tabDangKy.SelectedIndex = 3;
+            baiDang.init();
         }
         private void change2LienHeBacSi()
         {
             tabDangKy.SelectedIndex = 4;
+            lienHeBacSi.init();
         }
         private void change2NguoiThan()
         {
+            nguoiThan.init();
             tabDangKy.SelectedIndex = 5;
         }
-        private void changeMain()
+        private void changeMain(string tenDN)
         {
             tabDangKy.SelectedIndex = 0;
-            mainMenu.Show();
+            tenDangNhap = tenDN;
+            BenhNhanBUS bus = new BenhNhanBUS();
+            BenhNhan bn = bus.getThongTinTaiKhoan(tenDN);
+            mainMenu.setTenDangNhap(bn.TenNguoiDung);
+            mainMenu.Show(); 
         }
         private void change2DangKy()
         {

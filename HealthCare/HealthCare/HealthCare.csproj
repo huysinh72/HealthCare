@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,9 +52,11 @@
     <Compile Include="BaiDang.Designer.cs">
       <DependentUpon>BaiDang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BUS\BacSiBUS.cs" />
     <Compile Include="BUS\BaiDangBUS.cs" />
     <Compile Include="BUS\BenhBUS.cs" />
     <Compile Include="BUS\BenhNhanBUS.cs" />
+    <Compile Include="BUS\NguoiThanBUS.cs" />
     <Compile Include="BUS\TrieuChungChanDoan.cs" />
     <Compile Include="BUS\ViTriChanDoanBUS.cs" />
     <Compile Include="ChanDoan.cs">
@@ -67,6 +70,7 @@
     <Compile Include="DAL\BenhDAL.cs" />
     <Compile Include="DAL\BenhNhanDAL.cs" />
     <Compile Include="DAL\DataHelper.cs" />
+    <Compile Include="DAL\NguoiThanDAL.cs" />
     <Compile Include="DAL\TrieuChungChanDoanDAL.cs" />
     <Compile Include="DAL\ViTriChanDoanDAL.cs" />
     <Compile Include="DangKy.cs">
@@ -82,10 +86,11 @@
       <DependentUpon>DangNhapDangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\BacSi.cs" />
-    <Compile Include="DTO\BaiDang.cs" />
+    <Compile Include="DTO\BaiDangDTO.cs" />
     <Compile Include="DTO\Benh.cs" />
     <Compile Include="DTO\BenhNhan.cs" />
     <Compile Include="DTO\DuLieuBenhAn.cs" />
+    <Compile Include="DTO\NguoiThanDTO.cs" />
     <Compile Include="DTO\TrieuChungChanDoan.cs" />
     <Compile Include="DTO\ViTriChanDoan.cs" />
     <Compile Include="DTO\ViTriTrieuChung.cs" />
@@ -162,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
@@ -183,6 +189,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconFind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconTimKiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconFind1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

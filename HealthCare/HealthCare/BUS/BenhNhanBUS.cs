@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HealthCare.DAL;
 using HealthCare.DTO;
+using System.Data;
 namespace HealthCare.BUS
 {
     public class BenhNhanBUS
@@ -23,6 +24,16 @@ namespace HealthCare.BUS
         public bool addBenhNhan(BenhNhan bn)
         {
            return dal.addBenhNhan(bn);           
+        }
+
+        public DataTable getDuLieuKham(string tenDangNhap)
+        {
+            return dal.getDuLieuKham(tenDangNhap);
+        }
+
+        public BenhNhan getThongTinTaiKhoan(string tenDangNhap)
+        {
+            return dal.GetThongTinTaiKhoan(tenDangNhap);
         }
 
 

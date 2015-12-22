@@ -57,7 +57,7 @@ namespace HealthCare
            bn.TenDangNhap = tbTenDangNhap.Text;
            bn.TenNguoiDung = tbHoTen.Text;
            bn.MatKhau = tbMatKhau.Text;
-           bn.NgaySinh = DateTime.Parse(dtpickerNgaySinh.Text);
+           bn.NgaySinh = DateTime.Parse(dtpickerNgaySinh.Text).ToShortDateString();
            bn.Email = tbEmail.Text;
            bn.DienThoai = tbDienThoai.Text;
            bn.GioiTinh = cbNam.Checked ? "Nam" : "Nữ";
@@ -77,6 +77,11 @@ namespace HealthCare
         private void btCancel_Click(object sender, EventArgs e)
         {
             uscDangKyToDangNhap();
+        }
+
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

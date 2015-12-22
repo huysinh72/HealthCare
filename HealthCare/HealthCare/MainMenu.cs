@@ -75,14 +75,19 @@ namespace HealthCare
             uscNguoiThan();
         }
 
-        private void lbDangXuat_Click(object sender, EventArgs e)
+        public void setTenDangNhap(string tenDN)
         {
-            uscDangXuat();
+            btTenBenhNhan.Text = tenDN; 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btTenBenhNhan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btDangXuat_Click(object sender, EventArgs e)
+        {
+            uscDangXuat();
         }
     }
 }

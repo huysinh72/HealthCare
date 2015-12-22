@@ -88,6 +88,7 @@
             this.tbMatKhau.Name = "tbMatKhau";
             this.tbMatKhau.Size = new System.Drawing.Size(189, 22);
             this.tbMatKhau.TabIndex = 31;
+            this.tbMatKhau.UseSystemPasswordChar = true;
             // 
             // tbTenDangNhap
             // 

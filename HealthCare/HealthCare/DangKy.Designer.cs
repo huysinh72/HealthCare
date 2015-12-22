@@ -320,6 +320,7 @@
             this.Controls.Add(this.btDangKy);
             this.Name = "DangKy";
             this.Size = new System.Drawing.Size(547, 398);
+            this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

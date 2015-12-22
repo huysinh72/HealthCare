@@ -15,8 +15,10 @@ namespace HealthCare
     {
         public delegate void DangKy_ChangeHandle();
         public event DangKy_ChangeHandle uscDangKy;
-        public delegate void Main_ChangeHandle();
+
+        public delegate void Main_ChangeHandle(string tenDangNhap);
         public event Main_ChangeHandle uscMain;
+
         public DangNhapDangKy()
         {
             InitializeComponent();
@@ -27,7 +29,8 @@ namespace HealthCare
             BenhNhanBUS bus = new BenhNhanBUS();
             if (bus.hasTaiKhoan(tbTenDangNhap.Text, tbMatKhau.Text))
             {
-                uscMain();
+
+                uscMain(tbTenDangNhap.Text);
             }
             else
             {
