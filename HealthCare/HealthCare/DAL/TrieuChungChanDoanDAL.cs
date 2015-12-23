@@ -14,25 +14,28 @@ namespace HealthCare.DAL
     {
         DataHelper helper = new DataHelper();
 
-        private TrieuChungChanDoan GetTrieuChungFromDataRow(DataRow row)
+        private TrieuChung GetTrieuChungFromDataRow(DataRow row)
         {
             
-            TrieuChungChanDoan tc = new TrieuChungChanDoan();
-            tc.TrieuChung = row["TenTrieuChung"].ToString().Trim();
+            TrieuChung tc = new TrieuChung();
+            tc.TenTrieuChung = row["TenTrieuChung"].ToString().Trim();
+            tc.MaTrieuChung = int.Parse(row["MaTrieuChung"].ToString());
+
             return tc;
         }
 
-        public TrieuChungChanDoan[] getListTrieuChung(string ViTri)
+        public TrieuChung[] getListTrieuChung(string ViTri)
         {
-            TrieuChungChanDoan[] listTrieuChung = null;
+            TrieuChung[] listTrieuChung = null;
             DataTable table = null;
-            string command = "select * from ViTriBenh VT LEFT JOIN TrieuChung_ViTri VTTC ON VT.MaViTri =VTTC.MaViTri LEFT JOIN TrieuChung TC ON TC.MaTrieuChung=VTTC.MaTrieuChung WHERE VT.TenViTri=N'" + ViTri+"'";
+            string command = "select TC.* from ViTriBenh VT LEFT JOIN TrieuChung_ViTri VTTC ON VT.MaViTri =VTTC.MaViTri " + 
+                "LEFT JOIN TrieuChung TC ON TC.MaTrieuChung=VTTC.MaTrieuChung WHERE VT.TenViTri=N'" + ViTri+"'";
             table = helper.executeQuery(command);
 
             if (table.Rows.Count == 0)
                 return null;
 
-            listTrieuChung = new TrieuChungChanDoan[table.Rows.Count];
+            listTrieuChung = new TrieuChung[table.Rows.Count];
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
@@ -41,25 +44,5 @@ namespace HealthCare.DAL
 
             return listTrieuChung;
         }
-
-        public string[] getListStringTrieuChung(string ViTri)
-        {
-
-            
-                string[] listTrieuChung = null;
-                TrieuChungChanDoan[] listTrieuChungCD = getListTrieuChung(ViTri);
-
-               
-                if (listTrieuChungCD != null)
-                {
-                    listTrieuChung = new string[listTrieuChungCD.Length];
-                    for (int i = 0; i < listTrieuChungCD.Length; i++)
-                        listTrieuChung[i] = listTrieuChungCD[i].TrieuChung;
-                }
-                return listTrieuChung;
-
-            
-        }
-
     }
 }

@@ -10,11 +10,7 @@ namespace HealthCare.BUS
     public class TrieuChungChanDoanBUS
     {
         TrieuChungChanDoanDAL dal = new TrieuChungChanDoanDAL();
-        public string[] getListStringTrieuChung(string ViTri)
-        {
-            return dal.getListStringTrieuChung(ViTri);
-        }
-        public TrieuChungChanDoan[] getListTrieuChung(string ViTri)
+        public TrieuChung[] getListTrieuChung(string ViTri)
         {
             return dal.getListTrieuChung(ViTri);
         }

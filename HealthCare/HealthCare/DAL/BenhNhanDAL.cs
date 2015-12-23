@@ -23,7 +23,7 @@ namespace HealthCare.DAL
             bn.Email = row["Email"].ToString().Trim();
             bn.DienThoai = row["DienThoai"].ToString().Trim();
             bn.DiaChi = row["DiaChi"].ToString().Trim();
-            bn.NhanBaiDang = int.Parse(row["NhanBaiDang"].ToString());          
+            //bn.NhanBaiDang = int.Parse(row["NhanBaiDang"].ToString());          
             return bn;
         }
 

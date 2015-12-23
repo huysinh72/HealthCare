@@ -30,17 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cbVungDau = new System.Windows.Forms.ComboBox();
-            this.lbDsTrieuChung = new System.Windows.Forms.ListBox();
+            this.lbDsTrieuChungChon = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbTrieuChungTheoVung = new System.Windows.Forms.ComboBox();
             this.lbBenhChanDoan = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbBenh = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
+            this.btChanDoan = new System.Windows.Forms.Button();
+            this.lbDSTrieuChungTheoVung = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,32 +57,22 @@
             // 
             this.cbVungDau.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVungDau.FormattingEnabled = true;
-            this.cbVungDau.Items.AddRange(new object[] {
-            "Đầu",
-            "Lưng",
-            "Vai",
-            "Cánh Tay",
-            "Bàn Tay",
-            "Đùi",
-            "Cẳng chân",
-            "Bàn Chân",
-            "Mông"});
             this.cbVungDau.Location = new System.Drawing.Point(34, 85);
             this.cbVungDau.Name = "cbVungDau";
             this.cbVungDau.Size = new System.Drawing.Size(121, 29);
             this.cbVungDau.TabIndex = 1;
             this.cbVungDau.SelectedIndexChanged += new System.EventHandler(this.cbVungDau_SelectedIndexChanged);
             // 
-            // lbDsTrieuChung
+            // lbDsTrieuChungChon
             // 
-            this.lbDsTrieuChung.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDsTrieuChung.FormattingEnabled = true;
-            this.lbDsTrieuChung.ItemHeight = 21;
-            this.lbDsTrieuChung.Location = new System.Drawing.Point(416, 83);
-            this.lbDsTrieuChung.Name = "lbDsTrieuChung";
-            this.lbDsTrieuChung.ScrollAlwaysVisible = true;
-            this.lbDsTrieuChung.Size = new System.Drawing.Size(161, 88);
-            this.lbDsTrieuChung.TabIndex = 2;
+            this.lbDsTrieuChungChon.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDsTrieuChungChon.FormattingEnabled = true;
+            this.lbDsTrieuChungChon.ItemHeight = 21;
+            this.lbDsTrieuChungChon.Location = new System.Drawing.Point(416, 83);
+            this.lbDsTrieuChungChon.Name = "lbDsTrieuChungChon";
+            this.lbDsTrieuChungChon.ScrollAlwaysVisible = true;
+            this.lbDsTrieuChungChon.Size = new System.Drawing.Size(161, 109);
+            this.lbDsTrieuChungChon.TabIndex = 2;
             // 
             // label2
             // 
@@ -94,16 +84,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Chọn vùng đau";
             // 
-            // cbTrieuChungTheoVung
-            // 
-            this.cbTrieuChungTheoVung.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTrieuChungTheoVung.FormattingEnabled = true;
-            this.cbTrieuChungTheoVung.Location = new System.Drawing.Point(203, 85);
-            this.cbTrieuChungTheoVung.Name = "cbTrieuChungTheoVung";
-            this.cbTrieuChungTheoVung.Size = new System.Drawing.Size(164, 29);
-            this.cbTrieuChungTheoVung.TabIndex = 4;
-            this.cbTrieuChungTheoVung.SelectedIndexChanged += new System.EventHandler(this.cbTrieuChungTheoVung_SelectedIndexChanged);
-            // 
             // lbBenhChanDoan
             // 
             this.lbBenhChanDoan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,9 +92,8 @@
             this.lbBenhChanDoan.Location = new System.Drawing.Point(674, 85);
             this.lbBenhChanDoan.Name = "lbBenhChanDoan";
             this.lbBenhChanDoan.ScrollAlwaysVisible = true;
-            this.lbBenhChanDoan.Size = new System.Drawing.Size(187, 88);
+            this.lbBenhChanDoan.Size = new System.Drawing.Size(187, 109);
             this.lbBenhChanDoan.TabIndex = 5;
-            this.lbBenhChanDoan.SelectedIndexChanged += new System.EventHandler(this.lbBenhChanDoan_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -166,25 +145,35 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nội dụng bệnh";
             // 
-            // btAdd
-            // 
-            this.btAdd.Location = new System.Drawing.Point(204, 120);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 11;
-            this.btAdd.Text = "Them";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
             // btDel
             // 
-            this.btDel.Location = new System.Drawing.Point(292, 120);
+            this.btDel.Location = new System.Drawing.Point(416, 198);
             this.btDel.Name = "btDel";
             this.btDel.Size = new System.Drawing.Size(75, 23);
             this.btDel.TabIndex = 12;
-            this.btDel.Text = "Xoa";
+            this.btDel.Text = "Xóa";
             this.btDel.UseVisualStyleBackColor = true;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // btChanDoan
+            // 
+            this.btChanDoan.Location = new System.Drawing.Point(586, 83);
+            this.btChanDoan.Name = "btChanDoan";
+            this.btChanDoan.Size = new System.Drawing.Size(75, 23);
+            this.btChanDoan.TabIndex = 13;
+            this.btChanDoan.Text = "Chẩn đoán";
+            this.btChanDoan.UseVisualStyleBackColor = true;
+            // 
+            // lbDSTrieuChungTheoVung
+            // 
+            this.lbDSTrieuChungTheoVung.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDSTrieuChungTheoVung.FormattingEnabled = true;
+            this.lbDSTrieuChungTheoVung.ItemHeight = 21;
+            this.lbDSTrieuChungTheoVung.Location = new System.Drawing.Point(204, 83);
+            this.lbDSTrieuChungTheoVung.Name = "lbDSTrieuChungTheoVung";
+            this.lbDSTrieuChungTheoVung.Size = new System.Drawing.Size(165, 109);
+            this.lbDSTrieuChungTheoVung.TabIndex = 14;
+            this.lbDSTrieuChungTheoVung.SelectedIndexChanged += new System.EventHandler(this.lbDSTrieuChungTheoVung_SelectedIndexChanged);
             // 
             // ChanDoan
             // 
@@ -192,22 +181,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.lbDSTrieuChungTheoVung);
+            this.Controls.Add(this.btChanDoan);
             this.Controls.Add(this.btDel);
-            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbBenh);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbBenhChanDoan);
-            this.Controls.Add(this.cbTrieuChungTheoVung);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbDsTrieuChung);
+            this.Controls.Add(this.lbDsTrieuChungChon);
             this.Controls.Add(this.cbVungDau);
             this.Controls.Add(this.label1);
             this.Name = "ChanDoan";
             this.Size = new System.Drawing.Size(900, 400);
-            this.Load += new System.EventHandler(this.ChanDoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,16 +205,16 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbVungDau;
-        private System.Windows.Forms.ListBox lbDsTrieuChung;
+        private System.Windows.Forms.ListBox lbDsTrieuChungChon;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbTrieuChungTheoVung;
         private System.Windows.Forms.ListBox lbBenhChanDoan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbBenh;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.Button btChanDoan;
+        private System.Windows.Forms.ListBox lbDSTrieuChungTheoVung;
     }
 }

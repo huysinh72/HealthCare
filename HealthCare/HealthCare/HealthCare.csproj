@@ -91,7 +91,7 @@
     <Compile Include="DTO\BenhNhan.cs" />
     <Compile Include="DTO\DuLieuBenhAn.cs" />
     <Compile Include="DTO\NguoiThanDTO.cs" />
-    <Compile Include="DTO\TrieuChungChanDoan.cs" />
+    <Compile Include="DTO\TrieuChung.cs" />
     <Compile Include="DTO\ViTriChanDoan.cs" />
     <Compile Include="DTO\ViTriTrieuChung.cs" />
     <Compile Include="Form1.cs">
