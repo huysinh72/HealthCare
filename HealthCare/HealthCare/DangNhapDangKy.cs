@@ -36,7 +36,7 @@ namespace HealthCare
             {
                 lbWrong.Text = "Tài khoản hoặc mật khẩu sai";
             }
-           
+       
         }
 
         private void btDangKy_Click(object sender, EventArgs e)

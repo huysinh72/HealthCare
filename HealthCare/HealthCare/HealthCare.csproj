@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HealthCare</RootNamespace>
     <AssemblyName>HealthCare</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="libpxcclr.cs, Version=6.0.21.6598, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\libpxcclr.cs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -54,11 +59,14 @@
     </Compile>
     <Compile Include="BUS\BacSiBUS.cs" />
     <Compile Include="BUS\BaiDangBUS.cs" />
-    <Compile Include="BUS\BenhBUS.cs" />
     <Compile Include="BUS\BenhNhanBUS.cs" />
+    <Compile Include="BUS\CamBUS.cs" />
+    <Compile Include="BUS\CamTTKhamBUS.cs" />
+    <Compile Include="BUS\ChanDoanBUS.cs" />
+    <Compile Include="BUS\KhamDinhKyBUS.cs" />
     <Compile Include="BUS\NguoiThanBUS.cs" />
-    <Compile Include="BUS\TrieuChungChanDoan.cs" />
-    <Compile Include="BUS\ViTriChanDoanBUS.cs" />
+    <Compile Include="BUS\TrieuChungBUS.cs" />
+    <Compile Include="BUS\ViTriBenhBUS.cs" />
     <Compile Include="ChanDoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,12 +75,13 @@
     </Compile>
     <Compile Include="DAL\BacSiDAL.cs" />
     <Compile Include="DAL\BaiDangDAL.cs" />
-    <Compile Include="DAL\BenhDAL.cs" />
     <Compile Include="DAL\BenhNhanDAL.cs" />
+    <Compile Include="DAL\ChanDoanDAL.cs" />
     <Compile Include="DAL\DataHelper.cs" />
+    <Compile Include="DAL\KhamDinhKyDAL.cs" />
     <Compile Include="DAL\NguoiThanDAL.cs" />
-    <Compile Include="DAL\TrieuChungChanDoanDAL.cs" />
-    <Compile Include="DAL\ViTriChanDoanDAL.cs" />
+    <Compile Include="DAL\TrieuChungDAL.cs" />
+    <Compile Include="DAL\ViTriBenhDAL.cs" />
     <Compile Include="DangKy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,16 +98,70 @@
     <Compile Include="DTO\BaiDangDTO.cs" />
     <Compile Include="DTO\Benh.cs" />
     <Compile Include="DTO\BenhNhan.cs" />
-    <Compile Include="DTO\DuLieuBenhAn.cs" />
+    <Compile Include="DTO\DuLieuKham.cs" />
     <Compile Include="DTO\NguoiThanDTO.cs" />
+    <Compile Include="DTO\ThongTinThem.cs" />
     <Compile Include="DTO\TrieuChung.cs" />
-    <Compile Include="DTO\ViTriChanDoan.cs" />
+    <Compile Include="DTO\ViTriBenh.cs" />
     <Compile Include="DTO\ViTriTrieuChung.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemBacSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemBacSi.Designer.cs">
+      <DependentUpon>FormThemBacSi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBenh.Designer.cs">
+      <DependentUpon>FormBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemBenh.Designer.cs">
+      <DependentUpon>FormThemBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemTrieuChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemTrieuChung.Designer.cs">
+      <DependentUpon>FormThemTrieuChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemViTriBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemViTriBenh.Designer.cs">
+      <DependentUpon>FormThemViTriBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongTinBN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinBN.Designer.cs">
+      <DependentUpon>FormThongTinBN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongTinChiTietBN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinChiTietBN.Designer.cs">
+      <DependentUpon>FormThongTinChiTietBN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongTinChiTietBS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinChiTietBS.Designer.cs">
+      <DependentUpon>FormThongTinChiTietBS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthCareDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthCareDataDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="KhamDinhKy.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +195,18 @@
     <Compile Include="NguoiThan.Designer.cs">
       <DependentUpon>NguoiThan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinKham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinKham.Designer.cs">
+      <DependentUpon>ThongTinKham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControlAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlAdmin.Designer.cs">
+      <DependentUpon>userControlAdmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaiDang.resx">
       <DependentUpon>BaiDang.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +221,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemBacSi.resx">
+      <DependentUpon>FormThemBacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBenh.resx">
+      <DependentUpon>FormBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemBenh.resx">
+      <DependentUpon>FormThemBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemTrieuChung.resx">
+      <DependentUpon>FormThemTrieuChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemViTriBenh.resx">
+      <DependentUpon>FormThemViTriBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinBN.resx">
+      <DependentUpon>FormThongTinBN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinChiTietBN.resx">
+      <DependentUpon>FormThongTinChiTietBN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinChiTietBS.resx">
+      <DependentUpon>FormThongTinChiTietBS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhamDinhKy.resx">
       <DependentUpon>KhamDinhKy.cs</DependentUpon>
@@ -172,6 +271,23 @@
     <EmbeddedResource Include="ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinKham.resx">
+      <DependentUpon>ThongTinKham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlAdmin.resx">
+      <DependentUpon>userControlAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HealthCareDataDataSet.xsc">
+      <DependentUpon>HealthCareDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HealthCareDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HealthCareDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HealthCareDataDataSet.xss">
+      <DependentUpon>HealthCareDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,6 +314,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconFind1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CONTEMPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suprise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

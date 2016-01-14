@@ -25,64 +25,83 @@ namespace HealthCare
         private void Form1_Load(object sender, EventArgs e)
         {
            // mainMenu.Hide();
-            tabDangKy.Appearance = TabAppearance.FlatButtons;
-            tabDangKy.ItemSize = new Size(0, 1);
-            tabDangKy.SizeMode = TabSizeMode.Fixed;
-            tabDangKy.SelectedIndex = 6;
+            tabControl.Appearance = TabAppearance.FlatButtons;
+            tabControl.ItemSize = new Size(0, 1);
+            tabControl.SizeMode = TabSizeMode.Fixed;
+            tabControl.SelectedIndex = 6;
             ChanDoan.init();
            
         }
 
         private void change2ChanDoan()
         {
-            tabDangKy.SelectedIndex = 0;
+            tabControl.SelectedIndex = 0;
             ChanDoan.init();
         }
         private void change2KhamDinhKy()
         {
-            tabDangKy.SelectedIndex = 1;
+            tabControl.SelectedIndex = 1;
         }
         private void change2ThongKe()
         {
-            tabDangKy.SelectedIndex = 2;
+            tabControl.SelectedIndex = 2;
             thongKe.init();
         }
         private void change2BaiDang()
         {
-            tabDangKy.SelectedIndex = 3;
+            tabControl.SelectedIndex = 3;
             baiDang.init();
         }
         private void change2LienHeBacSi()
         {
-            tabDangKy.SelectedIndex = 4;
+            tabControl.SelectedIndex = 4;
             lienHeBacSi.init();
         }
         private void change2NguoiThan()
         {
             nguoiThan.init();
-            tabDangKy.SelectedIndex = 5;
+            tabControl.SelectedIndex = 5;
         }
         private void changeMain(string tenDN)
         {
-            tabDangKy.SelectedIndex = 0;
-            tenDangNhap = tenDN;
-            BenhNhanBUS bus = new BenhNhanBUS();
-            BenhNhan bn = bus.getThongTinTaiKhoan(tenDN);
-            mainMenu.setTenDangNhap(bn.TenNguoiDung);
-            mainMenu.Show(); 
+            if (tenDN != "admin")
+            {
+                tabControl.SelectedIndex = 0;
+                tenDangNhap = tenDN;
+                BenhNhanBUS bus = new BenhNhanBUS();
+                BenhNhan bn = bus.getThongTinTaiKhoan(tenDN);
+                mainMenu.setTenDangNhap(bn.TenNguoiDung);
+                mainMenu.enableButton();
+                mainMenu.Show();
+            }
+            else
+            {
+                tabControl.SelectedIndex = 8;
+                tenDangNhap = tenDN;
+                mainMenu.setTenDangNhap(tenDN);
+                mainMenu.disableButton();
+                mainMenu.Show();
+                userControlAdmin.init();
+            }
         }
         private void change2DangKy()
         {
-            tabDangKy.SelectedIndex = 7;
+            tabControl.SelectedIndex = 7;
         }
         private void change2DangNhap()
         {
-            tabDangKy.SelectedIndex = 6;
+            tabControl.SelectedIndex = 6;
         }
         private void change2DangXuat()
         {
-            tabDangKy.SelectedIndex = 6;
+            tabControl.SelectedIndex = 6;
             mainMenu.Hide();
+        }
+
+        private void change2TrangChu()
+        {
+            tabControl.SelectedIndex = 0;
+           // mainMenu.Hide();
         }
 
         private void dangNhapDangKy_Load(object sender, EventArgs e)
@@ -101,11 +120,16 @@ namespace HealthCare
             mainMenu.uscNguoiThan += new MainMenu.NguoiThan_ChangeHandle(change2NguoiThan);
             mainMenu.uscThongKe += new MainMenu.ThongKe_ChangeHandle(change2ThongKe);
             mainMenu.uscDangXuat += new MainMenu.DangXuat_ChangeHandle(change2DangXuat);
+            mainMenu.uscTrangChu += new MainMenu.TrangChu_ChangeHandle(change2TrangChu);
         }
 
         private void dangKy1_Load(object sender, EventArgs e)
         {
             dangKy.uscDangKyToDangNhap += new DangKy.DangKyToDangNhap_ChangeHandle(change2DangNhap);
-        } 
+        }
+        private void Form1_Closing(Object sender, EventArgs e)
+        {
+            khamDinhKy.Stop();
+        }
     }
 }

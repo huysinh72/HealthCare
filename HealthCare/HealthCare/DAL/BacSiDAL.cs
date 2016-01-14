@@ -22,6 +22,7 @@ namespace HealthCare.DAL
             b.DienThoai = row["DienThoai"].ToString().Trim();
             b.Email = row["Email"].ToString().Trim();
             b.GioiTinh = row["GioiTinh"].ToString().Trim();
+            b.ChuyenNganh = row["ChuyenNganh"].ToString().Trim();
             b.NgaySinh = DateTime.Parse(row["NgaySinh"].ToString()).ToShortDateString();
             return b;
         }
@@ -65,6 +66,7 @@ namespace HealthCare.DAL
 
             return listBS;
         }
+
         public BacSi[] getDSBacSi()
         {
             BacSi[] listBS = null;
@@ -98,8 +100,20 @@ namespace HealthCare.DAL
 
             res = GetBacSiFromDataRow(table.Rows[0]);
 
-
             return res;
         }
+
+        public bool deleteBacSi(string MaBS)
+        {
+            string command = String.Format("Delete from BacSi where BacSi.MaBacSi = '{0}'", MaBS);
+            helper.executeNonQuery(command);
+            return true;
+        }
+
+        public bool addBacSi(BacSi bs)
+        {
+            return helper.addBacSi(bs);
+        }
+
     }
 }

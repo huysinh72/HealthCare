@@ -59,6 +59,14 @@ namespace HealthCare
             lbEmail.Text = "Email: " + nt.Email;
             lbDienThoai.Text = "Điện thoại: " + nt.DienThoai;
             lbDiaChi.Text = "Địa chỉ: " + nt.DiaChi;
+
+            BenhNhanBUS bus = new BenhNhanBUS();
+            DataTable dt = bus.getDuLieuKhamVaBenh(nt.TenDangNhap);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                dataGridViewDSBenhAn.Rows.Add(r["NgayKham"], r["NhipTim"], r["CamXuc"], r["TenBenh"]);
+            }
         }
     }
 }

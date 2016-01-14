@@ -17,8 +17,7 @@ namespace HealthCare
         public ChanDoan()
         {
             InitializeComponent();
-
-            
+   
         }
 
         public void init()
@@ -26,16 +25,19 @@ namespace HealthCare
             lbDsTrieuChungChon.Items.Clear();
             lbBenhChanDoan.Items.Clear();
             lbDSTrieuChungTheoVung.Items.Clear();
-            ViTriChanDoanBUS vt = new ViTriChanDoanBUS();
-            TrieuChungChanDoanBUS tc = new TrieuChungChanDoanBUS();
-            cbVungDau.DataSource = vt.getListStringViTri();
+            ChanDoanBUS bus = new ChanDoanBUS();
+            cbVungDau.DataSource = bus.getListViTri();
+            cbVungDau.DisplayMember = "TenViTri";
         }
 
         private void cbVungDau_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbDSTrieuChungTheoVung.Items.Clear();
-            TrieuChungChanDoanBUS bus = new TrieuChungChanDoanBUS();
-            TrieuChung[] tc = bus.getListTrieuChung(cbVungDau.Text);
+            ChanDoanBUS bus = new ChanDoanBUS();
+            ViTriBenh vt = (ViTriBenh)cbVungDau.SelectedItem;
+            TrieuChung[] tc = bus.getListTrieuChung(vt.MaViTri);
+            if (tc == null)
+                return;
             foreach(TrieuChung i in tc)
             {
                 lbDSTrieuChungTheoVung.Items.Add(i);
@@ -54,12 +56,85 @@ namespace HealthCare
         private void lbDSTrieuChungTheoVung_SelectedIndexChanged(object sender, EventArgs e)
         {
             TrieuChung tc = (TrieuChung)lbDSTrieuChungTheoVung.SelectedItem;
-            lbDsTrieuChungChon.Items.Add(tc);
-            lbDsTrieuChungChon.DisplayMember = "TenTrieuChung";
-            lbDsTrieuChungChon.ValueMember = "MaTrieuChung";
+            if (!lbDsTrieuChungChon.Items.Contains(tc))
+            {
+                lbDsTrieuChungChon.Items.Add(tc);
+                lbDsTrieuChungChon.DisplayMember = "TenTrieuChung";
+                lbDsTrieuChungChon.ValueMember = "MaTrieuChung";
+            }
         }
 
+        private void btChanDoan_Click(object sender, EventArgs e)
+        {
+            lbBenhChanDoan.Items.Clear();
+            ChanDoanBUS bus = new ChanDoanBUS();
 
+            TrieuChung tc;
+             for(int i = 0; i < lbDsTrieuChungChon.Items.Count; i++)
+             {
+                 tc = (TrieuChung)lbDsTrieuChungChon.Items[i];
+                 Benh[] listBenh = bus.getListBenh(tc.MaTrieuChung);
+                 if (listBenh != null)
+                 foreach(Benh b in listBenh)
+                 {
+                     bool check = false;
+                     for (int j = 0; j < lbBenhChanDoan.Items.Count; j++ )
+                     {
+                         Benh bb = (Benh)lbBenhChanDoan.Items[j];
+                         if (bb.maBenh == b.maBenh)
+                             check = true;
+                     }
+                         if (!check)
+                         {
+                             lbBenhChanDoan.Items.Add(b);
+                             lbBenhChanDoan.DisplayMember = "TenBenh";
+                         }
+                 }
+             }
+        }
 
+        private void lbBenhChanDoan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Benh b = (Benh)lbBenhChanDoan.SelectedItem;
+            FormBenh fb = new FormBenh();
+            fb.Text = b.tenBenh;
+            fb.init(b, false);
+            fb.Show();
+        }
+
+        private void btLayThongtin_Click(object sender, EventArgs e)
+        {
+            ThongTinKham form = new ThongTinKham();
+            form.Show();
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            Benh b = (Benh)lbBenhChanDoan.SelectedItem;
+            if (b == null)
+            {
+                MessageBox.Show("Bạn chưa chuẩn đoán");
+                return;
+            }
+            ThongTinThem tt = ThongTinThem.getInstance();
+
+            DuLieuKham dlk = new DuLieuKham();
+            dlk.NhipTim = tt.NhipTim;
+            dlk.CamXuc = tt.CamXuc;
+            dlk.ChieuCao = tt.ChieuCao;
+            dlk.CanNang = tt.CanNang;
+            dlk.MaBenh = b.maBenh;
+            ChanDoanBUS bus = new ChanDoanBUS();
+            int maDLK = bus.addDulieuKham(dlk);
+
+            for (int i = 0; i < lbDsTrieuChungChon.Items.Count; i++)
+            {
+                TrieuChung tc = (TrieuChung)lbDsTrieuChungChon.Items[i];
+                bus.addTrieuChungKham(maDLK, tc.MaTrieuChung);
+            }
+            MessageBox.Show("Thông tin kham đã được lưu");
+            tt.delete();
+
+        }
     }
 }

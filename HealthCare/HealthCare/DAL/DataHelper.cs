@@ -149,5 +149,63 @@ namespace HealthCare.DAL
                     comm.Dispose();
             }
         }
+
+        public int addDulieuKham(DuLieuKham dlk)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("sp_form_ThemDuLieuKham", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@ntim", dlk.NhipTim);
+            cmd.Parameters.AddWithValue("@cxuc", dlk.CamXuc);
+            cmd.Parameters.AddWithValue("@ccao", dlk.ChieuCao);
+            cmd.Parameters.AddWithValue("@cnang", dlk.CanNang);
+            cmd.Parameters.AddWithValue("@mabenh", dlk.MaBenh);
+            cmd.Parameters.Add("@ma", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+            cmd.ExecuteNonQuery();
+            int ma = (int)cmd.Parameters["@ma"].Value;
+            conn.Close();
+            return ma;
+        }
+
+        public bool addBacSi(BacSi bs)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("sp_form_ThemBacSi", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@ten", bs.TenBacSi);
+            cmd.Parameters.AddWithValue("@ns", bs.NgaySinh);
+            cmd.Parameters.AddWithValue("@gt", bs.GioiTinh);
+            cmd.Parameters.AddWithValue("@email", bs.Email);
+            cmd.Parameters.AddWithValue("@dt", bs.DienThoai);
+            cmd.Parameters.AddWithValue("@dc", bs.DiaChi);
+            cmd.Parameters.AddWithValue("@cn", bs.ChuyenNganh);
+            cmd.Parameters.AddWithValue("@bc", bs.BangCap);
+            
+
+            cmd.ExecuteNonQuery();
+       
+            conn.Close();
+            return true;
+        }
+
+        public bool addTrieuChung(TrieuChung tc, string maVT)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("sp_form_ThemTrieuChung", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@tenTC", tc.TenTrieuChung);
+            cmd.Parameters.AddWithValue("@maViTriBenh", maVT);
+         
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            return true;
+        }
+
+
     }
 }

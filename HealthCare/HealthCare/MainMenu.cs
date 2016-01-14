@@ -82,12 +82,34 @@ namespace HealthCare
 
         private void btTenBenhNhan_Click(object sender, EventArgs e)
         {
-
+            FormThongTinBN t = new FormThongTinBN();
+            t.Show();
         }
 
         private void btDangXuat_Click(object sender, EventArgs e)
         {
             uscDangXuat();
+        }
+
+        public void disableButton()
+        {
+            btChanDoan.Enabled = false;
+            btBaiDang.Enabled = false;
+            btKhamDinhKy.Enabled = false;
+            btLienHe.Enabled = false;
+            btNguoiThan.Enabled = false;
+            btThongKe.Enabled = false;
+            btTenBenhNhan.Enabled = false;
+        }
+        public void enableButton()
+        {
+            btChanDoan.Enabled = true;
+            btBaiDang.Enabled = true;
+            btKhamDinhKy.Enabled = true;
+            btLienHe.Enabled = true;
+            btNguoiThan.Enabled = true;
+            btThongKe.Enabled = true;
+            btTenBenhNhan.Enabled = true;
         }
     }
 }

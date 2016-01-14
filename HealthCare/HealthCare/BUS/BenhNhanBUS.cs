@@ -31,11 +31,29 @@ namespace HealthCare.BUS
             return dal.getDuLieuKham(tenDangNhap);
         }
 
+        public DataTable getDuLieuKhamVaBenh(string tenDangNhap)
+        {
+            return dal.getDuLieuKhamVaBenh(tenDangNhap);
+        }
+
         public BenhNhan getThongTinTaiKhoan(string tenDangNhap)
         {
             return dal.GetThongTinTaiKhoan(tenDangNhap);
         }
 
+        public BenhNhan getBenhNhan(string tenDN)
+        {
+            return dal.getBenhNhan(tenDN);
+        }
 
+        public BenhNhan[] getListBenhNhan()
+        {
+            return dal.getListBenhNhan();
+        }
+
+        public bool deleteBenhNhan(string maBN)
+        {
+            return dal.deleteBenhNhan(maBN);
+        }
     }
 }

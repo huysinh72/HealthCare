@@ -27,5 +27,15 @@ namespace HealthCare.BUS
         {
             return dal.getDSBacSi();
         }
+
+        public bool addBacSi(BacSi bs)
+        {
+            return dal.addBacSi(bs);
+        }
+
+        public bool deleteBacSi(string maBS)
+        {
+            return dal.deleteBacSi(maBS);
+        }
     }
 }

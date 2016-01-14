@@ -27,6 +27,25 @@ namespace HealthCare.DAL
             return bn;
         }
 
+        public BenhNhan getBenhNhan(string tenDN)
+        {
+            BenhNhan bn = null;
+            DataTable table = null;
+            table = helper.executeQuery(String.Format("Select * from BenhNhan where BenhNhan.TenDangNhap = '{0}'", tenDN));
+
+            if (table.Rows.Count == 0)
+                return null;
+
+            bn = new BenhNhan();
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                bn = GetBenhNhanFromDataRow(table.Rows[i]);
+            }
+
+            return bn;
+        }
+
         public BenhNhan[] getListBenhNhan()
         {
             BenhNhan[] listBenhNhan = null;
@@ -93,9 +112,24 @@ namespace HealthCare.DAL
 
         public DataTable getDuLieuKham(string tenDangNhap)
         {
-            string query = String.Format("select top 50 dlk.* from DuLieuKham dlk join ChiTietKham ctk on dlk.MaDuLieuKham = ctk.DuLieuKham where ctk.BenhNhan = '{0}'", tenDangNhap);
+            string query = String.Format("select top 50 kdk.* from KhamDinhKy kdk where kdk.MaBenhNhan = '{0}'", tenDangNhap);
             DataTable res = helper.executeQuery(query);
             return res;
+        }
+
+        public DataTable getDuLieuKhamVaBenh(string tenDangNhap)
+        {
+            string query = String.Format("select top 50 dlk.*, b.TenBenh from DuLieuKham dlk, ChiTietKham ctk, Benh b " +
+                "where dlk.MaDuLieuKham = ctk.DuLieuKham and ctk.BenhNhan = '{0}' and dlk.BenhChanDoan = b.MaBenh", tenDangNhap);
+            DataTable res = helper.executeQuery(query);
+            return res;
+        }
+
+        public bool deleteBenhNhan(string maBN)
+        {
+            string query = String.Format("Delete from BenhNhan where BenhNhan.TenDangNhap = '{0}'", maBN);
+            helper.executeNonQuery(query);
+            return true;
         }
     }
 }

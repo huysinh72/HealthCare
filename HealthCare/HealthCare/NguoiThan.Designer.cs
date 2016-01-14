@@ -43,11 +43,17 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbDienThoai = new System.Windows.Forms.Label();
             this.lbHoTen = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridViewDSBenhAn = new System.Windows.Forms.DataGridView();
+            this.NgayKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhipTim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CamXuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Benh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.GBThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSBenhAn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,7 +163,7 @@
             // 
             this.lbDiaChi.AutoSize = true;
             this.lbDiaChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiaChi.Location = new System.Drawing.Point(18, 145);
+            this.lbDiaChi.Location = new System.Drawing.Point(15, 145);
             this.lbDiaChi.Name = "lbDiaChi";
             this.lbDiaChi.Size = new System.Drawing.Size(47, 15);
             this.lbDiaChi.TabIndex = 5;
@@ -167,7 +173,7 @@
             // 
             this.lbGioiTinh.AutoSize = true;
             this.lbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGioiTinh.Location = new System.Drawing.Point(215, 34);
+            this.lbGioiTinh.Location = new System.Drawing.Point(202, 35);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(52, 15);
             this.lbGioiTinh.TabIndex = 4;
@@ -177,7 +183,7 @@
             // 
             this.lbNgaySinh.AutoSize = true;
             this.lbNgaySinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgaySinh.Location = new System.Drawing.Point(18, 62);
+            this.lbNgaySinh.Location = new System.Drawing.Point(15, 62);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(65, 15);
             this.lbNgaySinh.TabIndex = 3;
@@ -187,7 +193,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(18, 90);
+            this.lbEmail.Location = new System.Drawing.Point(15, 90);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(38, 15);
             this.lbEmail.TabIndex = 2;
@@ -197,7 +203,7 @@
             // 
             this.lbDienThoai.AutoSize = true;
             this.lbDienThoai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDienThoai.Location = new System.Drawing.Point(18, 117);
+            this.lbDienThoai.Location = new System.Drawing.Point(15, 117);
             this.lbDienThoai.Name = "lbDienThoai";
             this.lbDienThoai.Size = new System.Drawing.Size(65, 15);
             this.lbDienThoai.TabIndex = 1;
@@ -207,21 +213,11 @@
             // 
             this.lbHoTen.AutoSize = true;
             this.lbHoTen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoTen.Location = new System.Drawing.Point(18, 34);
+            this.lbHoTen.Location = new System.Drawing.Point(15, 34);
             this.lbHoTen.Name = "lbHoTen";
             this.lbHoTen.Size = new System.Drawing.Size(46, 15);
             this.lbHoTen.TabIndex = 0;
             this.lbHoTen.Text = "Họ tên:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(253, 244);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(375, 136);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bệnh án";
             // 
             // comboBox1
             // 
@@ -249,15 +245,71 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Xác nhận người thân:";
             // 
+            // dataGridViewDSBenhAn
+            // 
+            this.dataGridViewDSBenhAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDSBenhAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NgayKham,
+            this.NhipTim,
+            this.CamXuc,
+            this.Benh});
+            this.dataGridViewDSBenhAn.Location = new System.Drawing.Point(253, 262);
+            this.dataGridViewDSBenhAn.Name = "dataGridViewDSBenhAn";
+            this.dataGridViewDSBenhAn.Size = new System.Drawing.Size(348, 118);
+            this.dataGridViewDSBenhAn.TabIndex = 43;
+            // 
+            // NgayKham
+            // 
+            this.NgayKham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NgayKham.FillWeight = 70F;
+            this.NgayKham.HeaderText = "Ngày khám";
+            this.NgayKham.Name = "NgayKham";
+            this.NgayKham.Width = 70;
+            // 
+            // NhipTim
+            // 
+            this.NhipTim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NhipTim.FillWeight = 60F;
+            this.NhipTim.HeaderText = "Nhịp tim";
+            this.NhipTim.Name = "NhipTim";
+            this.NhipTim.Width = 60;
+            // 
+            // CamXuc
+            // 
+            this.CamXuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CamXuc.FillWeight = 80F;
+            this.CamXuc.HeaderText = "Cảm xúc";
+            this.CamXuc.Name = "CamXuc";
+            this.CamXuc.Width = 80;
+            // 
+            // Benh
+            // 
+            this.Benh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Benh.FillWeight = 90F;
+            this.Benh.HeaderText = "Bệnh";
+            this.Benh.Name = "Benh";
+            this.Benh.Width = 90;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(253, 238);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 21);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Bệnh án";
+            // 
             // NguoiThan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.dataGridViewDSBenhAn);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.GBThongTin);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.lbDSNguoiThanCanTim);
@@ -273,6 +325,7 @@
             this.Size = new System.Drawing.Size(900, 400);
             this.GBThongTin.ResumeLayout(false);
             this.GBThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSBenhAn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +342,6 @@
         private System.Windows.Forms.ListBox lbDSNguoiThanCanTim;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox GBThongTin;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbGioiTinh;
         private System.Windows.Forms.Label lbNgaySinh;
         private System.Windows.Forms.Label lbEmail;
@@ -299,5 +351,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridViewDSBenhAn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhipTim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CamXuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Benh;
+        private System.Windows.Forms.Label label5;
     }
 }

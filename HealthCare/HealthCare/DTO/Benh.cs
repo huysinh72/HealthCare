@@ -8,20 +8,9 @@ namespace HealthCare.DTO
 {
     public class Benh
     {
-        string _TenBenh;
-        string _NoiDung;
-        public string TenBenh
-        {
-            set { _TenBenh = value; }
-            get { return _TenBenh; }
-        }
-
-        public string NoiDung
-        {
-            set { _NoiDung = value; }
-            get { return _NoiDung; }
-        }
-
-       
+        public int maBenh { get; set; }
+        public string tenBenh { get; set; }
+        public string noiDung { get; set; }
+        public string loiKhuyen { get; set; }
     }
 }
