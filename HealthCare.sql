@@ -180,6 +180,12 @@ ADD CONSTRAINT FK_TrieuChungBenh_TrieuChung
 FOREIGN KEY (MaTrieuChung)
 REFERENCES dbo.TrieuChung(MaTrieuChung)
 
+go
+ALTER TABLE KhamDinhKy
+ADD CONSTRAINT FK_KhamDinhKy_BenhNhan
+FOREIGN KEY (MaBenhNhan)
+REFERENCES BenhNhan(TenDangNhap)
+
 
 go
 insert into BenhNhan 
